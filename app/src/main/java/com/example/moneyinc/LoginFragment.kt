@@ -43,6 +43,10 @@ class LoginFragment : Fragment() {
             false
         )
 
+        binding.editTextTextPassword.setText("funcionario")
+        binding.editTextTextPassword.setText("1234!\"#\$")
+
+
         binding.button.setOnClickListener {
             var username: String = binding.editTextTextPassword.text.toString()
             var password: String = binding.editTextTextPassword.text.toString()

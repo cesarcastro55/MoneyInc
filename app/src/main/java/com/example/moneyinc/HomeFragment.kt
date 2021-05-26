@@ -10,6 +10,11 @@ import com.example.moneyinc.databinding.FragmentHomeBinding
 
 
 class HomeFragment : Fragment() {
+
+    companion object{
+        fun newInstance() = HomeFragment()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
