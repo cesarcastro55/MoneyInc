@@ -43,12 +43,12 @@ class LoginFragment : Fragment() {
             false
         )
 
-        binding.editTextTextPassword.setText("funcionario")
+        binding.editTextTextPersonName.setText("funcionario")
         binding.editTextTextPassword.setText("1234!\"#\$")
 
 
         binding.button.setOnClickListener {
-            var username: String = binding.editTextTextPassword.text.toString()
+            var username: String = binding.editTextTextPersonName.text.toString()
             var password: String = binding.editTextTextPassword.text.toString()
 
             getToken(username, password)
@@ -71,7 +71,7 @@ class LoginFragment : Fragment() {
                     var PostResponse: Token? = response.body()
                     if(PostResponse != null){
                         token = response.body()?.token
-                        val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToHomeFragment(token)findNavController().navigate(aux)
+                        //val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToHomeFragment(token)findNavController().navigate(aux)
                     }else{
                         Log.e("Erro!!", "Sem dados!!")
                     }
