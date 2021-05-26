@@ -6,21 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavDirections
-import androidx.navigation.fragment.findNavController
 import com.example.moneyinc.databinding.FragmentLoginBinding
 import retrofit2.Call
 import retrofit2.Response
-import kotlin.math.round
 
 
 class LoginFragment : Fragment() {
 
-    var token: String? = null
+    var token: String ?= null
 
     companion object{
         fun newInstance() = LoginFragment()
@@ -44,6 +39,7 @@ class LoginFragment : Fragment() {
         )
 
         binding.editTextTextPersonName.setText("funcionario")
+        //binding.editTextTextPersonName.setText("cliente")
         binding.editTextTextPassword.setText("1234!\"#\$")
 
 
@@ -71,7 +67,7 @@ class LoginFragment : Fragment() {
                     var PostResponse: Token? = response.body()
                     if(PostResponse != null){
                         token = response.body()?.token
-                        //val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToHomeFragment(token)findNavController().navigate(aux)
+                        val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToHomeFragment(token).findNavController().navigate(aux)
                     }else{
                         Log.e("Erro!!", "Sem dados!!")
                     }

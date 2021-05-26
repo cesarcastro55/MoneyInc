@@ -41,7 +41,7 @@
             android:id="@+id/action_homeFragment_to_walletFragment"
             app:destination="@id/walletFragment" />
         <argument
-            android:name="token"
+            android:name="token_1"
             app:argType="string" />
     </fragment>
     <fragment

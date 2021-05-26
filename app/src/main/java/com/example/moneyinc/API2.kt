@@ -5,7 +5,10 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.POST
 
 private const val BASE_URL = "https://moneyinc.carrola.com"
 
@@ -18,14 +21,14 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
-interface UserToken{
-    @POST("/tokens/")
-    fun createToken(@Body post: TokenPost):
-            Call<Token>
+
+interface AccountInfo{
+    @GET("/accounts/")
+    fun getInformation(@Header("Authorization") token: String):
+            Call<UserInfo>
 }
 
-object ServiceApi {
-    val retrofitService : UserToken by lazy {
-        retrofit.create(UserToken::class.java) }
+object ServiceApi2{
+    val retrofitService : UserInfo by lazy {
+        retrofit.create(UserInfo::class.java) }
 }
-
