@@ -16,7 +16,7 @@ import retrofit2.Response
 
 class LoginFragment : Fragment() {
 
-    var token: String ?= null
+    //var token: String ?= null
 
     /**
     companion object{

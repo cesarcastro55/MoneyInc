@@ -20,8 +20,7 @@ data class UserInfo(
     val active: Boolean,
     val approved: Boolean,
     val createdOn: String,
-    val saldo: Double
-)
+    val saldo: Double)
 
 
 
