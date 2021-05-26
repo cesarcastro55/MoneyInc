@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import com.example.moneyinc.databinding.FragmentHomeBinding
 import retrofit2.Call
@@ -53,6 +54,7 @@ class HomeFragment : Fragment() {
             object : retrofit2.Callback<UserInfo>{
                 override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                     user = response.body()
+
 
                 }
 

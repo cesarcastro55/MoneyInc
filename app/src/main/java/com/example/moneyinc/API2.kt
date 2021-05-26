@@ -29,6 +29,6 @@ interface AccountInfo{
 }
 
 object ServiceApi2{
-    val retrofitService : UserInfo by lazy {
-        retrofit.create(UserInfo::class.java) }
+    val retrofitService : AccountInfo by lazy {
+        retrofit.create(AccountInfo::class.java) }
 }
