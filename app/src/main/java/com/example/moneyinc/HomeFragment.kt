@@ -39,6 +39,7 @@ class HomeFragment : Fragment() {
         val aux: HomeFragmentArgs ?= arguments?.let { HomeFragmentArgs.fromBundle(it) }
         val args = aux?.token.toString()
         val token = "token $args"
+        Log.e("Token recebido!!", token)
 
 
         getInfo(token)

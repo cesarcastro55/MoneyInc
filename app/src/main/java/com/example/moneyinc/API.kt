@@ -18,6 +18,7 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .build()
 
+/**Buscar o token*/
 interface UserToken{
     @POST("/tokens/")
     fun createToken(@Body post: TokenPost):
@@ -27,5 +28,18 @@ interface UserToken{
 object ServiceApi {
     val retrofitService : UserToken by lazy {
         retrofit.create(UserToken::class.java) }
+}
+
+
+/**Buscar informações sobre as contas */
+interface AccountInfo{
+    @GET("/accounts/")
+    fun getInformation(@Header("Authorization") token: String):
+            Call<UserInfo>
+}
+
+object ServiceApi2{
+    val retrofitService : AccountInfo by lazy {
+        retrofit.create(AccountInfo::class.java) }
 }
 
