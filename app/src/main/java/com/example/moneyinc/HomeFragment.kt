@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavDirections
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.moneyinc.databinding.FragmentHomeBinding
 import retrofit2.Call
 import retrofit2.Response
@@ -15,11 +18,6 @@ import kotlin.math.log
 
 
 class HomeFragment : Fragment() {
-
-    /**
-    companion object{
-        fun newInstance() = HomeFragment()
-    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,13 +38,27 @@ class HomeFragment : Fragment() {
         val aux: HomeFragmentArgs ?= arguments?.let { HomeFragmentArgs.fromBundle(it) }
         val args = aux?.token.toString()
         val token = "token $args"
+
+
         Log.e("Token recebido!!", token)
 
 
         getInfo(token)
 
 
+        binding.button4.setOnClickListener{view: View -> view.findNavController()
+        .navigate(R.id.action_homeFragment_to_selectAccountFragment)
+        }
+
+        /**
+        binding.button4.setOnClickListener {
+            val aux = NavDirections = HomeFragmentDirections.actionHomeFragmentToSelectAccountFragment()
+            findNavController().navigate(aux)
+        }*/
+
+
         return binding.root
+
     }
 
     private fun getInfo(token: String){
@@ -56,12 +68,14 @@ class HomeFragment : Fragment() {
             object : retrofit2.Callback<UserInfo>{
                 override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                     user = response.body()
-
+                    Log.e("User", user.toString())
+                    Log.e("Nome", user!!.titular1)
+                    Log.e("Saldo", user!!.saldo.toString())
 
                 }
 
                 override fun onFailure(call: Call<UserInfo>, t: Throwable) {
-                    Log.e("Erro!!", "Sem dados!!")
+                    Log.e("Erro!!", "Sem dados2!!")
                 }
 
             }

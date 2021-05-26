@@ -16,12 +16,6 @@ import retrofit2.Response
 
 class LoginFragment : Fragment() {
 
-    //var token: String ?= null
-
-    /**
-    companion object{
-        fun newInstance() = LoginFragment()
-    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +66,7 @@ class LoginFragment : Fragment() {
                         val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToHomeFragment(tempToken)
                         findNavController().navigate(aux)
                     }else{
-                        Log.e("Erro!!", "Sem dados!!")
+                        Log.e("Erro!!", "Sem dados1!!")
                     }
                 }
 

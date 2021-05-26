@@ -33,7 +33,7 @@ object ServiceApi {
 
 /**Buscar informações sobre as contas */
 interface AccountInfo{
-    @GET("/accounts/")
+    @GET("/accounts/32/")
     fun getInformation(@Header("Authorization") token: String):
             Call<UserInfo>
 }
@@ -43,3 +43,14 @@ object ServiceApi2{
         retrofit.create(AccountInfo::class.java) }
 }
 
+/**Buscar informações sobre a lista das contas */
+interface AccountLista{
+    @GET("/accounts/")
+    fun getLista(@Header("Authorization") token: String, @Header("page") page: Int):
+            Call<Lista>
+}
+
+object ServiceApi3{
+    val retrofitService : AccountLista by lazy {
+        retrofit.create(AccountLista::class.java) }
+}
