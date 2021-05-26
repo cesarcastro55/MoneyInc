@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.example.moneyinc.databinding.FragmentLoginBinding
 import retrofit2.Call
 import retrofit2.Response
@@ -17,9 +18,10 @@ class LoginFragment : Fragment() {
 
     var token: String ?= null
 
+    /**
     companion object{
         fun newInstance() = LoginFragment()
-    }
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,8 +68,9 @@ class LoginFragment : Fragment() {
                 override fun onResponse(call: Call<Token>, response: Response<Token>) {
                     var PostResponse: Token? = response.body()
                     if(PostResponse != null){
-                        token = response.body()?.token
-                        val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToHomeFragment(token).findNavController().navigate(aux)
+                        val tempToken = response.body()!!.token
+                        val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToHomeFragment(tempToken)
+                        findNavController().navigate(aux)
                     }else{
                         Log.e("Erro!!", "Sem dados!!")
                     }

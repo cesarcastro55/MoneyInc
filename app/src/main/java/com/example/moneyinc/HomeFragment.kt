@@ -16,9 +16,10 @@ import kotlin.math.log
 
 class HomeFragment : Fragment() {
 
+    /**
     companion object{
         fun newInstance() = HomeFragment()
-    }
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
