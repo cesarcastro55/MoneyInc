@@ -20,8 +20,8 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_loginFragment_to_selectAccountFragment"
-            app:destination="@id/selectAccountFragment" />
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_homeFragment_to_walletFragment"
             app:destination="@id/walletFragment" />
+        <argument
+            android:name="token"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -55,11 +58,7 @@
         android:id="@+id/selectAccountFragment"
         android:name="com.example.moneyinc.SelectAccountFragment"
         android:label="SelectAccountFragment"
-        tools:layout="@layout/fragment_select_account">
-        <action
-            android:id="@+id/action_selectAccountFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_select_account"/>
     <fragment
         android:id="@+id/creditCardFragment"
         android:name="com.example.moneyinc.CreditCardFragment"
