@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.example.moneyinc.databinding.FragmentSelectAccountBinding
 import retrofit2.Call
 import retrofit2.Response
@@ -29,12 +31,19 @@ class SelectAccountFragment : Fragment() {
             container,
             false
         )
+
+
         val aux: SelectAccountFragmentArgs ?= arguments?.let { SelectAccountFragmentArgs.fromBundle(it) }
         val args = aux?.token.toString()
-        //val token = "token $args"
-        Log.e("Token recebido!!", args)
+        val token = "token $args"
+        Log.e("Token recebido!!", token)
 
-        val page: Int = 1
+        binding.button2.setOnClickListener {
+            val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(token)
+            findNavController().navigate(aux)
+        }
+
+
         //getAccountList(token, page)
 
         return binding.root

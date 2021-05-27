@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
@@ -56,6 +57,7 @@ class LoginFragment : Fragment() {
         ServiceApi.retrofitService.createToken(post).enqueue(
             object : retrofit2.Callback<Token>{
                 override fun onFailure(call: Call<Token>, t: Throwable) {
+                    Toast.makeText(context, "Erro!! Credenciais Incorretas", Toast.LENGTH_LONG).show()
                     Log.e("Error!!", "Sem dados!!")
                 }
 
@@ -63,8 +65,12 @@ class LoginFragment : Fragment() {
                     var PostResponse: Token? = response.body()
                     if(PostResponse != null){
                         val tempToken = response.body()!!.token
-                        val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToHomeFragment(tempToken)
-                        findNavController().navigate(aux)
+                        if(username == "cliente") {
+                            val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToSelectAccountFragment(tempToken)
+                            findNavController().navigate(aux)}
+                        else{
+                            val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToEmployeeMenuFragment(tempToken)
+                            findNavController().navigate(aux)}
                     }else{
                         Log.e("Erro!!", "Sem dados1!!")
                     }
