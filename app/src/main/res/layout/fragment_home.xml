@@ -17,24 +17,29 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="140dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="40dp"
+                android:gravity="center_vertical|left"
                 android:text="Bem-Vindo"
                 android:textColor="@color/black"
                 android:textSize="25dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView11"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="360dp"
-                android:layout_height="150dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="20dp"
-                android:text="TextView"
+                android:text="Saldo"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -42,11 +47,13 @@
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="360dp"
-                android:layout_height="150dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="50dp"
                 android:layout_marginEnd="20dp"
-                android:text="TextView"
+                android:gravity="center"
+                android:text="saldo disp"
+                android:textColor="@color/black"
+                android:textSize="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -56,15 +63,56 @@
                 android:layout_width="360dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="75dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginBottom="75dp"
-                android:text="Selecionar Conta"
                 android:background="@drawable/buttonshape"
-                android:textColor="@color/black"
                 android:backgroundTint="#e0e0e0"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Selecionar Conta"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="10dp"
+                android:text="Nome"
+                android:gravity="center_vertical|left"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="360dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="20dp"
+                android:text="Ultimos Movimentos"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="360dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout></layout>

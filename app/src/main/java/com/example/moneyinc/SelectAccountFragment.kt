@@ -29,22 +29,24 @@ class SelectAccountFragment : Fragment() {
             container,
             false
         )
-
         val aux: SelectAccountFragmentArgs ?= arguments?.let { SelectAccountFragmentArgs.fromBundle(it) }
         val args = aux?.token.toString()
-        val token = "token $args"
-        Log.e("Token recebido!!", token)
+        //val token = "token $args"
+        Log.e("Token recebido!!", args)
 
+        val page: Int = 1
+        //getAccountList(token, page)
 
         return binding.root
     }
 
     private fun getAccountList(token: String, page: Int) {
-        var pag: Lista
+        //var pag: Lista
 
         ServiceApi3.retrofitService.getLista(token, page).enqueue(
             object : retrofit2.Callback<Lista> {
                 override fun onResponse(call: Call<Lista>, response: Response<Lista>) {
+
                     Log.e("sucesso", " com dados1!!")
                 }
 

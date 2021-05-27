@@ -22,10 +22,15 @@ data class UserInfo(
     val createdOn: String,
     val saldo: Double)
 
+data class Page(
+    val page: Int
+)
+
 data class Lista(
-    val id: Int,
-    val type: String,
-    val titular1: String)
+    val count: Int,
+    val next: String,
+    val previous: String,
+    val results: List<UserInfo>)
 
 
 

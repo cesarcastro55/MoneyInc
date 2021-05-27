@@ -26,8 +26,6 @@ class CreditCardFragment : Fragment() {
             false
         )
 
-
-
         return binding.root
     }
 

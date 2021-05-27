@@ -54,3 +54,6 @@ object ServiceApi3{
     val retrofitService : AccountLista by lazy {
         retrofit.create(AccountLista::class.java) }
 }
+
+
+

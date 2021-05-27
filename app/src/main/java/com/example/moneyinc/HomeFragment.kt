@@ -1,6 +1,7 @@
 package com.example.moneyinc
 
 import android.os.Bundle
+import android.renderscript.ScriptGroup
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -45,21 +46,23 @@ class HomeFragment : Fragment() {
 
         getInfo(token)
 
-
+        /**
         binding.button4.setOnClickListener{view: View -> view.findNavController()
         .navigate(R.id.action_homeFragment_to_selectAccountFragment)
-        }
-
-        /**
-        binding.button4.setOnClickListener {
-            val aux = NavDirections = HomeFragmentDirections.actionHomeFragmentToSelectAccountFragment()
-            findNavController().navigate(aux)
         }*/
+
+
+        binding.button4.setOnClickListener {
+            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSelectAccountFragment(token)
+            findNavController().navigate(aux)
+        }
 
 
         return binding.root
 
     }
+
+
 
     private fun getInfo(token: String){
         var user: UserInfo ?= null
@@ -71,7 +74,8 @@ class HomeFragment : Fragment() {
                     Log.e("User", user.toString())
                     Log.e("Nome", user!!.titular1)
                     Log.e("Saldo", user!!.saldo.toString())
-
+                    view?.findViewById<TextView>(R.id.textView11)?.text = user!!.titular1
+                    view?.findViewById<TextView>(R.id.textView10)?.text = user!!.saldo.toString() + "€"
                 }
 
                 override fun onFailure(call: Call<UserInfo>, t: Throwable) {
