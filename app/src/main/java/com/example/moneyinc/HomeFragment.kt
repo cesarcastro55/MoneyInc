@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
 
         val aux: HomeFragmentArgs ?= arguments?.let { HomeFragmentArgs.fromBundle(it) }
         val token = aux?.token.toString()
-
+        val token1 = "7d5861ca4b8d2a0c50b40bad4a3be7228b489aaa"
 
         Log.e("Token recebido!!", token)
         Log.e("aqui", token)
@@ -66,7 +66,8 @@ class HomeFragment : Fragment() {
         getInfo(token)
 
         binding.button5.setOnClickListener {
-            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSelectAccountFragment(token)
+
+            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSelectAccountFragment(token1)
             findNavController().navigate(aux)
         }
 
