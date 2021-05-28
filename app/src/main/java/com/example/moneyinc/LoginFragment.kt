@@ -35,8 +35,8 @@ class LoginFragment : Fragment() {
             false
         )
 
-        binding.editTextTextPersonName.setText("funcionario")
-        //binding.editTextTextPersonName.setText("cliente")
+        //binding.editTextTextPersonName.setText("funcionario")
+        binding.editTextTextPersonName.setText("cliente")
         binding.editTextTextPassword.setText("1234!\"#\$")
 
 

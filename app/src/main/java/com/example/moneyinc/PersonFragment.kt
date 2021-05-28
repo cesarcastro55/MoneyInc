@@ -57,12 +57,12 @@ class PersonFragment : Fragment() {
             object : retrofit2.Callback<UserInfo>{
                 override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                     user = response.body()
-                    Log.e("Nome", user!!.titular1)
-                    Log.e("Saldo", user!!.saldo.toString())
-                    view?.findViewById<TextView>(R.id.textView5)?.text = user!!.titular1
-                    view?.findViewById<TextView>(R.id.textView6)?.text = user!!.iban
-                    view?.findViewById<TextView>(R.id.textView7)?.text = user!!.nib
-                    view?.findViewById<TextView>(R.id.textView8)?.text = user!!.swift
+                    //Log.e("Nome", user!!.titular1)
+                    //Log.e("Saldo", user!!.saldo.toString())
+                    //view?.findViewById<TextView>(R.id.textView5)?.text = user!!.titular1
+                    //view?.findViewById<TextView>(R.id.textView6)?.text = user!!.iban
+                    //view?.findViewById<TextView>(R.id.textView7)?.text = user!!.nib
+                    view?.findViewById<TextView>(R.id.textView8)?.text = user!!.id.toString()
                 }
 
                 override fun onFailure(call: Call<UserInfo>, t: Throwable) {

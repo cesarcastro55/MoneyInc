@@ -15,8 +15,8 @@ data class UserInfo(
     val titular2: String,
     val titular3: String,
     val iban: String,
-    val nib: String,
-    val swift: String,
+    val nib: Int,
+    val swift: Int,
     val active: Boolean,
     val approved: Boolean,
     val createdOn: String,
@@ -31,6 +31,22 @@ data class Lista(
     val next: String,
     val previous: String,
     val results: List<UserInfo>)
+
+data class Cards(
+    val id: Int,
+    val account: Int,
+    val user: Int,
+    val type : String,
+    val subtype: String,
+    val cost_per_year: Int,
+    val plafond: Int,
+    val nama_on_card: String,
+    val number: Int,
+    val valid_until: String,
+    val cvc: Int
+)
+
+
 
 
 

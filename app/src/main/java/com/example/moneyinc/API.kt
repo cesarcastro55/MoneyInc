@@ -56,4 +56,16 @@ object ServiceApi3{
 }
 
 
+/**Buscar informações sobre a lista dos cartões */
+interface CardsLista{
+    @GET("/cards/")
+        fun getListaCards(@Header("Authorization") token: String, @Header("page") page: Int):
+                Call<CardsLista>
+}
+
+object ServiceApi4{
+    val retrofitService : CardsLista by lazy {
+        retrofit.create(CardsLista::class.java) }
+}
+
 
