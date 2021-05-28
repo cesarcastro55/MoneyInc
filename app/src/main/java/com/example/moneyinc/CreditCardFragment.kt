@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.example.moneyinc.databinding.FragmentCreditCardBinding
 
 
@@ -25,6 +27,19 @@ class CreditCardFragment : Fragment() {
             container,
             false
         )
+
+        val aux: CreditCardFragmentArgs ?= arguments?.let { CreditCardFragmentArgs.fromBundle(it) }
+        val token = aux?.token.toString()
+
+        binding.button11.setOnClickListener {
+            val aux: NavDirections = CreditCardFragmentDirections.actionCreditCardFragmentToHomeFragment(token)
+            findNavController().navigate(aux)
+        }
+
+        binding.button13.setOnClickListener {
+            val aux: NavDirections = CreditCardFragmentDirections.actionCreditCardFragmentToPaymentsFragment(token)
+            findNavController().navigate(aux)
+        }
 
         return binding.root
     }

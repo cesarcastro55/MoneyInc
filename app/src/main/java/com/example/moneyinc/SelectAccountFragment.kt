@@ -50,7 +50,7 @@ class SelectAccountFragment : Fragment() {
     }
 
     private fun getAccountList(token: String, page: Int) {
-        //var pag: Lista
+        var ListaContas: Lista
 
         ServiceApi3.retrofitService.getLista(token, page).enqueue(
             object : retrofit2.Callback<Lista> {

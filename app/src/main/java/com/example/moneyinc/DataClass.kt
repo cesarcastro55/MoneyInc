@@ -15,8 +15,8 @@ data class UserInfo(
     val titular2: String,
     val titular3: String,
     val iban: String,
-    val nib: Int,
-    val swift: Int,
+    val nib: String,
+    val swift: String,
     val active: Boolean,
     val approved: Boolean,
     val createdOn: String,
@@ -45,6 +45,14 @@ data class Cards(
     val valid_until: String,
     val cvc: Int
 )
+
+data class Payments(
+    //val id: Int,
+    val account: Int,
+    val referencia: Int,
+    val codigo: Int,
+    val valor: Double,
+    val data_pagamento: String)
 
 
 

@@ -57,7 +57,7 @@ class LoginFragment : Fragment() {
         ServiceApi.retrofitService.createToken(post).enqueue(
             object : retrofit2.Callback<Token>{
                 override fun onFailure(call: Call<Token>, t: Throwable) {
-                    Toast.makeText(context, "Erro!! Credenciais Incorretas", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context!!, "Erro!! Credenciais Incorretas", Toast.LENGTH_LONG).show()
                     Log.e("Error!!", "Sem dados!!")
                 }
 

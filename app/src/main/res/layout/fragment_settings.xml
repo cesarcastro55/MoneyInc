@@ -18,13 +18,13 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:text="Definições"
                 android:gravity="center_vertical|left"
+                android:text="Definições"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button10"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -57,7 +57,18 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
+                android:background="@drawable/ic_logout"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

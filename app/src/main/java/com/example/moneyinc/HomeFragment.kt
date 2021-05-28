@@ -38,8 +38,32 @@ class HomeFragment : Fragment() {
 
 
         Log.e("Token recebido!!", token)
-        getInfo(token)
         Log.e("aqui", token)
+
+        fun getInfo(token: String){
+            var userI: UserInfo
+
+            ServiceApi2.retrofitService.getInformation(token).enqueue(
+                object : retrofit2.Callback<UserInfo>{
+                    override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
+                        Log.e("Erro!!", "Sem dados2!!")
+                        Log.e("Erro!!", response.code().toString())
+                        userI = response.body()!!
+                        Log.e("Nome", userI!!.titular1)
+                        Log.e("Saldo", userI!!.saldo.toString())
+                        binding.textView10.text = userI!!.saldo.toString()
+                        binding.textView11.text = userI!!.titular1
+
+                    }
+
+                    override fun onFailure(call: Call<UserInfo>, t: Throwable) {
+                        Log.e("Erro!!", "Sem dados2!!")
+                    }
+                }
+            )
+        }
+
+        getInfo(token)
 
         binding.button5.setOnClickListener {
             val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSelectAccountFragment(token)
@@ -66,23 +90,24 @@ class HomeFragment : Fragment() {
             findNavController().navigate(aux)
         }
 
+
         return binding.root
 
     }
 
+    /**
     private fun getInfo(token: String){
-        var user: UserInfo ?= null
+        var userT: UserInfo?= null
 
         ServiceApi2.retrofitService.getInformation(token).enqueue(
             object : retrofit2.Callback<UserInfo>{
                 override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
-                    //Log.d("Nome")
-                    user = response.body()
-                    /**
-                    Log.e("User", user.toString())
-                    Log.e("Nome", user!!.titular1)
-                    Log.e("Saldo", user!!.saldo.toString())*/
-                    view?.findViewById<TextView>(R.id.textView11)?.text = user!!.id.toString()
+                    Log.e("Erro!!", "Sem dados2!!")
+                    userT = response.body()
+                    //Log.e("User", user.toString())
+                    Log.e("Nome", userT!!.titular1)
+                    Log.e("Saldo", userT!!.saldo.toString())
+                    view?.findViewById<TextView>(R.id.textView11)?.text = userT!!.id.toString()
                     //view?.findViewById<TextView>(R.id.textView10)?.text = user!!.saldo.toString() + "€"
                 }
 
@@ -91,7 +116,7 @@ class HomeFragment : Fragment() {
                 }
             }
         )
-    }
+    }*/
 
 /*
     fun getInform(list: List<UserInfo>?):ArrayList<String?>{

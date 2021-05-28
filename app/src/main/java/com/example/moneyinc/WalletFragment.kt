@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.example.moneyinc.databinding.FragmentWalletBinding
 
 
@@ -28,6 +30,13 @@ class WalletFragment : Fragment() {
             false
         )
 
+        val aux: WalletFragmentArgs ?= arguments?.let { WalletFragmentArgs.fromBundle(it) }
+        val token = aux?.token.toString()
+
+        binding.button12.setOnClickListener {
+            val aux: NavDirections = WalletFragmentDirections.actionWalletFragmentToHomeFragment(token)
+            findNavController().navigate(aux)
+        }
 
         return binding.root
     }
