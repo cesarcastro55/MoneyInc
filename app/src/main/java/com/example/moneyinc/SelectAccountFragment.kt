@@ -38,6 +38,12 @@ class SelectAccountFragment : Fragment() {
         val token = "token $args"
         Log.e("Token recebido!!", token)
 
+        binding.button2.setOnClickListener {
+            val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(token)
+            findNavController().navigate(aux)
+        }
+
+
         var page = "1"
         var id: String
         var type: String
@@ -69,7 +75,7 @@ class SelectAccountFragment : Fragment() {
                             Log.d("titular", titular1)
                             Log.d("id", id)
                         }
-                        //if(response.code() == 404) page = "1"  // quando nao houver mais paginas, voltar à pag1
+                        //if(response.code() == 404) page = "1" // quando nao houver mais paginas, voltar à pag1
                     }
 
                     override fun onFailure(call: Call<Lista>, t: Throwable) {
@@ -82,24 +88,23 @@ class SelectAccountFragment : Fragment() {
 
         }
         getAccountList(token, page)
-        binding.button2.setOnClickListener {
-            val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(token)
-            findNavController().navigate(aux)
-        }
 
-
-        binding.button19.setOnClickListener{
-            var pageup = page.toInt() + 1
+        binding.button16.setOnClickListener{
+            var pageup = page.toInt() - 1
             page = pageup.toString()
             getAccountList(token, page)
         }
 
-        binding.button18.setOnClickListener{
-            var pageup = page.toInt() - 1
+        binding.button17.setOnClickListener{
+            var pageup = page.toInt() + 1
             page = pageup.toString()
             getAccountList(token, page)
         }
 
         return binding.root
     }
+
+
+
+
 }
