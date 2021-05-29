@@ -45,12 +45,12 @@ class PersonFragment : Fragment() {
         }
 
 
-        getInfo(token)
+        //getInfo(token)
 
         return binding.root
     }
 
-    private fun getInfo(token: String){
+    /*private fun getInfo(token: String){
         var user: UserInfo ?= null
 
         ServiceApi2.retrofitService.getInformation(token).enqueue(
@@ -72,6 +72,6 @@ class PersonFragment : Fragment() {
             }
         )
 
-    }
+    }*/
 
 }

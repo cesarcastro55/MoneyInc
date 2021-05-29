@@ -38,35 +38,68 @@ class SelectAccountFragment : Fragment() {
         val token = "token $args"
         Log.e("Token recebido!!", token)
 
+        var page = "1"
+        var id: String
+        var type: String
+        var titular1: String
+        var titular2: String
+        var titular3: String
+        var iban: String
+        var nib: String
+        var swift: String
+        var active: String
+        var approved: String
+        var createdOn: String
+        var saldo: String
+
+        Log.d("aqui", page)
+
+        fun getAccountList(token: String, page: String) {
+
+            ServiceApi3.retrofitService.getLista(token,page).enqueue(
+                object : retrofit2.Callback<Lista> {
+                    override fun onResponse(call: Call<Lista>, response: Response<Lista>) {
+
+                        Log.e("sucesso", " com dados1!!")
+                        for(i in response.body()?.results.orEmpty()){
+                            titular1 = i.titular1
+                            id = i.id.toString()
+                            type = i.type
+                            iban = i.iban
+                            Log.d("titular", titular1)
+                            Log.d("id", id)
+                        }
+                        //if(response.code() == 404) page = "1"  // quando nao houver mais paginas, voltar à pag1
+                    }
+
+                    override fun onFailure(call: Call<Lista>, t: Throwable) {
+                        Log.e("Erro!!", "Sem dados3!!")
+                        //Log.d("aquiFailure", t.message.toString())
+                    }
+
+                }
+            )
+
+        }
+        getAccountList(token, page)
         binding.button2.setOnClickListener {
             val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(token)
             findNavController().navigate(aux)
         }
 
 
-        //getAccountList(token, page)
+        binding.button19.setOnClickListener{
+            var pageup = page.toInt() + 1
+            page = pageup.toString()
+            getAccountList(token, page)
+        }
+
+        binding.button18.setOnClickListener{
+            var pageup = page.toInt() - 1
+            page = pageup.toString()
+            getAccountList(token, page)
+        }
 
         return binding.root
     }
-
-    private fun getAccountList(token: String, page: Int) {
-        var ListaContas: Lista
-
-        ServiceApi3.retrofitService.getLista(token, page).enqueue(
-            object : retrofit2.Callback<Lista> {
-                override fun onResponse(call: Call<Lista>, response: Response<Lista>) {
-
-                    Log.e("sucesso", " com dados1!!")
-                }
-
-                override fun onFailure(call: Call<Lista>, t: Throwable) {
-                    Log.e("Erro!!", "Sem dados3!!")
-                }
-
-            }
-        )
-
-    }
-
-
 }

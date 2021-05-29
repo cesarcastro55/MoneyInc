@@ -46,7 +46,7 @@ object ServiceApi2{
 /**Buscar informações sobre a lista das contas */
 interface AccountLista{
     @GET("/accounts/")
-    fun getLista(@Header("Authorization") token: String, @Query("page") page: Int):
+    fun getLista(@Header("Authorization") token: String, @Query("page") page: String):
             Call<Lista>
 }
 
@@ -59,7 +59,7 @@ object ServiceApi3{
 /**Buscar informações sobre a lista dos cartões */
 interface CardsLista{
     @GET("/cards/")
-        fun getListaCards(@Header("Authorization") token: String, @Query("page") page: Int):
+        fun getListaCards(@Header("Authorization") token: String, @Query("page") page: String):
                 Call<CardsLista>
 }
 

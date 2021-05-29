@@ -37,7 +37,7 @@ class CreditCardFragment : Fragment() {
         }
 
         binding.button13.setOnClickListener {
-            val aux: NavDirections = CreditCardFragmentDirections.actionCreditCardFragmentToPaymentsFragment(token)
+            val aux: NavDirections = CreditCardFragmentDirections.actionCreditCardFragmentToPaymentFragment(token)
             findNavController().navigate(aux)
         }
 
