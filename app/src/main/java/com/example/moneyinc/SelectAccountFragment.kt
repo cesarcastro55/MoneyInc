@@ -97,7 +97,9 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
     }
     override fun onItemClick(position: Int) {
         Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
-        val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(lista[position].titular1, lista[position].id.toString())
+        val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(lista[position].id.toString(),
+            lista[position].type, lista[position].titular1, lista[position].titular2, lista[position].titular3,
+            lista[position].iban, lista[position].nib, lista[position].swift, lista[position].active, lista[position].approved,lista[position].createdOn, lista[position].saldo.toString())
         findNavController().navigate(aux)
 
     }

@@ -34,12 +34,22 @@ class HomeFragment : Fragment() {
         )
 
         val aux: HomeFragmentArgs ?= arguments?.let { HomeFragmentArgs.fromBundle(it) }
-        val titular1 = aux?.titular1.toString()
         val id = aux?.id.toString()
+        val titular1 = aux?.titular1.toString()
+        val titular2 = aux?.titular2.toString()
+        val titular3 = aux?.titular3.toString()
+        val iban = aux?.iban.toString()
+        val nib = aux?.nib.toString()
+        val swift = aux?.swift.toString()
+        val active = aux?.active.toString()
+        val aproved = aux?.approved.toString()
+        val createdOn = aux?.createdOn.toString()
+        val saldo = aux?.saldo.toString()
         Log.d("nome recebido!!", titular1)
         Log.d("id recebido!!", id)
 
         binding.nometext.text = titular1
+        binding.saldotext.text = saldo
 
 
         /*Log.e("Token recebido!!", token)

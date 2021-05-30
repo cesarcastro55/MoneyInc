@@ -46,10 +46,39 @@
         <action
             android:id="@+id/action_homeFragment_to_selectAccountFragment"
             app:destination="@id/selectAccountFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
         <argument android:name="titular1"
             app:argType="string" />
         <argument
-            android:name="id"
+            android:name="titular2"
+            app:argType="string" />
+        <argument android:name="titular3"
+            app:argType="string" />
+        <argument
+            android:name="iban"
+            app:argType="string" />
+        <argument
+            android:name="nib"
+            app:argType="string" />
+        <argument
+            android:name="swift"
+            app:argType="string" />
+        <argument
+            android:name="active"
+            app:argType="boolean" />
+        <argument
+            android:name="approved"
+            app:argType="boolean" />
+        <argument
+            android:name="createdOn"
+            app:argType="string" />
+        <argument
+            android:name="saldo"
             app:argType="string" />
     </fragment>
     <fragment
