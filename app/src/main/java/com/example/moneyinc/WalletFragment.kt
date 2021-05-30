@@ -33,10 +33,10 @@ class WalletFragment : Fragment() {
         val aux: WalletFragmentArgs ?= arguments?.let { WalletFragmentArgs.fromBundle(it) }
         val token = aux?.token.toString()
 
-        binding.button12.setOnClickListener {
+        /*binding.button12.setOnClickListener {
             val aux: NavDirections = WalletFragmentDirections.actionWalletFragmentToHomeFragment(token)
             findNavController().navigate(aux)
-        }
+        }*/
 
         return binding.root
     }

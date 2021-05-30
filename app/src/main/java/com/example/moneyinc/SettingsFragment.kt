@@ -33,10 +33,10 @@ class SettingsFragment : Fragment() {
         val aux: SettingsFragmentArgs ?= arguments?.let { SettingsFragmentArgs.fromBundle(it) }
         val token = aux?.token.toString()
 
-        binding.button10.setOnClickListener {
+        /*binding.button10.setOnClickListener {
             val aux: NavDirections = SettingsFragmentDirections.actionSettingsFragmentToHomeFragment(token)
             findNavController().navigate(aux)
-        }
+        }*/
 
         binding.button3.setOnClickListener {
             val aux: NavDirections = SettingsFragmentDirections.actionSettingsFragmentToLoginFragment()

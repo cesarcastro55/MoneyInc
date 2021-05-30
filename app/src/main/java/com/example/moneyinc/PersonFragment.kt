@@ -39,10 +39,10 @@ class PersonFragment : Fragment() {
         Log.e("Token recebido!!", token)
 
 
-        binding.button4.setOnClickListener {
+        /*binding.button4.setOnClickListener {
             val aux: NavDirections = PersonFragmentDirections.actionPersonFragmentToHomeFragment(token)
             findNavController().navigate(aux)
-        }
+        }*/
 
 
         //getInfo(token)

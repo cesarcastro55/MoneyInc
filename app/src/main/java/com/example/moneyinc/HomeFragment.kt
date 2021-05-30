@@ -34,10 +34,15 @@ class HomeFragment : Fragment() {
         )
 
         val aux: HomeFragmentArgs ?= arguments?.let { HomeFragmentArgs.fromBundle(it) }
-        val token = aux?.token.toString()
+        val titular1 = aux?.titular1.toString()
+        val id = aux?.id.toString()
+        Log.d("nome recebido!!", titular1)
+        Log.d("id recebido!!", id)
+
+        binding.nometext.text = titular1
 
 
-        Log.e("Token recebido!!", token)
+        /*Log.e("Token recebido!!", token)
         //getInfo(token)
         Log.e("aqui", token)
 
@@ -96,7 +101,7 @@ class HomeFragment : Fragment() {
 
 
         getInfo(token)
-        Log.e("aqui", token)
+        Log.e("aqui", token)*/
 
 
         return binding.root
