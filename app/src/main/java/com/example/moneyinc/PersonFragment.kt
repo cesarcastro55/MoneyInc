@@ -33,10 +33,19 @@ class PersonFragment : Fragment() {
 
 
         val aux: PersonFragmentArgs ?= arguments?.let { PersonFragmentArgs.fromBundle(it) }
-        val token = aux?.token.toString()
+        val id = aux?.id.toString()
+        val titular1 = aux?.titular1.toString()
+        val iban = aux?.iban.toString()
+        val nib = aux?.nib.toString()
+        val swift = aux?.swift.toString()
 
+        Log.e("Token recebido!!", id)
 
-        Log.e("Token recebido!!", token)
+        binding.textView5.text = titular1
+        binding.textView6.text = iban
+        binding.textView7.text = nib
+        binding.textView8.text = swift
+
 
 
         /*binding.button4.setOnClickListener {

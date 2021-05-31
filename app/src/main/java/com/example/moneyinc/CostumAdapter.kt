@@ -25,10 +25,12 @@ class CustomAdapter(
     View.OnClickListener{
         val texttitular: TextView = view.findViewById(R.id.texttitular)
         val textid: TextView = view.findViewById(R.id.textid)
+        val textsaldo: TextView = view.findViewById(R.id.textsaldo)
 
         fun bind(userInfo: UserInfo) {
             texttitular.text = userInfo.titular1
             textid.text = userInfo.id.toString()
+            textsaldo.text = userInfo.saldo.toString()
         }
 
         init {

@@ -45,42 +45,48 @@ class HomeFragment : Fragment() {
         val aproved = aux?.approved.toString()
         val createdOn = aux?.createdOn.toString()
         val saldo = aux?.saldo.toString()
+
+
+
         Log.d("nome recebido!!", titular1)
         Log.d("id recebido!!", id)
 
         binding.nometext.text = titular1
-        binding.saldotext.text = saldo
+        binding.textView10.text = saldo + '€'
 
 
-        /*Log.e("Token recebido!!", token)
+        //Log.e("Token recebido!!", token)
         //getInfo(token)
-        Log.e("aqui", token)
+        //Log.e("aqui", token)
 
         binding.button5.setOnClickListener {
-            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSelectAccountFragment(token)
+            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSelectAccountFragment(id)
             findNavController().navigate(aux)
         }
+
 
         binding.button6.setOnClickListener {
-            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToWalletFragment(token)
+            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToWalletFragment(id)
             findNavController().navigate(aux)
         }
 
+
         binding.button7.setOnClickListener {
-            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToPersonFragment(token)
+            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToPersonFragment(id, titular1, iban, nib, swift)
             findNavController().navigate(aux)
         }
 
         binding.button8.setOnClickListener {
-            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToCreditCardFragment(token)
+            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToCreditCardFragment(id)
             findNavController().navigate(aux)
         }
 
         binding.button9.setOnClickListener {
-            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSettingsFragment(token)
+            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSettingsFragment(id)
             findNavController().navigate(aux)
         }
 
+        /*
         fun getInfo(token: String){
             var user: UserInfo ?= null
 

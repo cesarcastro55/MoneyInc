@@ -49,6 +49,7 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
         Log.d("aqui", page)
 
         getAccountList(token, page)
+
         /*binding.button2.setOnClickListener {
             val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(token)
             findNavController().navigate(aux)

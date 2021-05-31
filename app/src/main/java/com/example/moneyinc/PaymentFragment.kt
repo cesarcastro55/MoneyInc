@@ -30,14 +30,13 @@ class PaymentFragment : Fragment() {
             )
 
             val aux: PaymentFragmentArgs ?= arguments?.let { PaymentFragmentArgs.fromBundle(it) }
-            val token = aux?.token.toString()
+            val id = aux?.id.toString()
 
 
             binding.button14.setOnClickListener {
-            val aux: NavDirections = PaymentFragmentDirections.actionPaymentFragmentToCreditCardFragment(token)
+            val aux: NavDirections = PaymentFragmentDirections.actionPaymentFragmentToWalletFragment(id)
                 findNavController().navigate(aux)
             }
-
 
 
             binding.button15.setOnClickListener {

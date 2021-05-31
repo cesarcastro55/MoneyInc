@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.MoneyInc" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#e0e0e0</item>
-        <item name="colorPrimaryVariant">#e0e0e0</item>
+        <item name="colorPrimary">#ffffff</item>
+        <item name="colorPrimaryVariant">#ffffff</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
