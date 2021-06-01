@@ -7,46 +7,35 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/texttitular"
-        android:layout_width="160dp"
+        android:id="@+id/valortext"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:gravity="center_vertical"
-        android:text="CONTA"
+        android:text="Valor"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textid"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textid"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="10dp"
-        android:gravity="center_vertical"
-        android:text="ID"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/texttitular"
+        app:layout_constraintEnd_toStartOf="@+id/datatext"
+        app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textsaldo"
-        android:layout_width="123dp"
+        android:id="@+id/datatext"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginEnd="5dp"
         android:gravity="center_vertical"
-        android:text="SALDO"
+        android:text="Data"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toRightOf="@+id/valortext"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

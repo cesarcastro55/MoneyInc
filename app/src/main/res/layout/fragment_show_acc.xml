@@ -16,110 +16,195 @@
 
             <TextView
                 android:id="@+id/idtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="left"
                 android:text="ID"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/typetext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="TYPE"
-                app:layout_constraintTop_toBottomOf="@+id/idtext"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/idtext" />
 
             <TextView
                 android:id="@+id/titular1text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="TITULAR1"
-                app:layout_constraintTop_toBottomOf="@+id/typetext"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent" />
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typetext" />
 
             <TextView
                 android:id="@+id/titular2text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="TITULAR2"
-                app:layout_constraintTop_toBottomOf="@+id/titular1text"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titular1text" />
 
             <TextView
                 android:id="@+id/titular3text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="TITULAR3"
-                app:layout_constraintTop_toBottomOf="@+id/titular2text"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titular2text" />
 
             <TextView
                 android:id="@+id/ibantext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="left"
                 android:text="IBAN"
-                app:layout_constraintTop_toBottomOf="@+id/titular3text"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:background="@drawable/textshape"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titular3text" />
 
             <TextView
                 android:id="@+id/nibtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="NIB"
-                app:layout_constraintTop_toBottomOf="@+id/ibantext"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ibantext" />
 
             <TextView
                 android:id="@+id/swifttext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="NIB"
-                app:layout_constraintTop_toBottomOf="@+id/nibtext"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Swift"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nibtext" />
 
             <TextView
                 android:id="@+id/activetext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="ACTIVE"
-                app:layout_constraintTop_toBottomOf="@+id/swifttext"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/swifttext" />
 
             <TextView
                 android:id="@+id/approvedtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="APPROVED"
-                app:layout_constraintTop_toBottomOf="@+id/activetext"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activetext" />
 
             <TextView
                 android:id="@+id/createdOn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
                 android:text="CREATEDON"
-                app:layout_constraintTop_toBottomOf="@+id/approvedtext"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/approvedtext" />
+
             <TextView
                 android:id="@+id/saldotext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="373dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="left"
                 android:text="SALDO"
-                app:layout_constraintTop_toBottomOf="@+id/createdOn"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"/>
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:background="@drawable/textshape"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createdOn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

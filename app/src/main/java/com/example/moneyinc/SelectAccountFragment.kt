@@ -18,7 +18,6 @@ import kotlinx.android.synthetic.main.fragment_select_account.*
 import retrofit2.Call
 import retrofit2.Response
 
-
 class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
 
     var args = ""
@@ -42,8 +41,8 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
         val token = "token $args"
         Log.e("Token recebido!!", token)
 
-        var page = "1"
 
+        var page = "1"
         getAccountList(token, page)
 
         /*binding.button2.setOnClickListener {
@@ -87,7 +86,7 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
                     }
                     //passar lista ao adapter
                     adapter.reloadItems(lista)
-                    // if(response.body()?.results!!.equals("404")) page = 1
+                   // if(response.body()?.results!!.equals("404")) page = "1"
                 }
 
                 override fun onFailure(call: Call<Lista>, t: Throwable) {

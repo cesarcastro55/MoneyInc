@@ -40,12 +40,12 @@ class CreditCardFragment : Fragment(), CardShowAdapater.OnItemClickListener {
         val token = aux?.token.toString()
         Log.d("token cartao", token)
 
-        /*binding.button11.setOnClickListener {
+        /*binding.returnbutton.setOnClickListener {
             val aux: NavDirections = CreditCardFragmentDirections.actionCreditCardFragmentToHomeFragment(token)
             findNavController().navigate(aux)
-        }
+        }*/
 
-        binding.button13.setOnClickListener {
+       /* binding.button13.setOnClickListener {
             val aux: NavDirections = CreditCardFragmentDirections.actionCreditCardFragmentToPaymentFragment(token)
             findNavController().navigate(aux)
         }*/
@@ -65,7 +65,7 @@ class CreditCardFragment : Fragment(), CardShowAdapater.OnItemClickListener {
                 override fun onResponse(call: Call<ListaC>, response: Response<ListaC>) {
                     lista = mutableListOf<Cards>()
                     for (i in response.body()?.results.orEmpty()) {
-                        val item = Cards(i.id, i.account, i.user, i.type, i.subtype, i.cost_per_year,
+                        val item = Cards(i.account, i.user, i.type, i.subtype, i.cost_per_year,
                             i.plafond, i.name_on_card, i.number, i.valid_until, i.cvc)
                         Log.d("ERRO BURRO", i.account.toString())
                         lista.add(item)

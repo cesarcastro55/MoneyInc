@@ -1,5 +1,7 @@
 package com.example.moneyinc
 
+import android.support.v4.app.INotificationSideChannel
+
 data class TokenPost(
     val username: String,
     val password: String)
@@ -35,7 +37,6 @@ data class ListaC(
     val results: List<Cards>)
 
 data class Cards(
-    val id: Int,
     val account: Int,
     val user: Int,
     val type : String,
@@ -47,14 +48,28 @@ data class Cards(
     val valid_until: String,
     val cvc: String
 )
+data class ListaP(
+    val count: Int,
+    val next: String?,
+    val previous: String?,
+    val results: List<Payments>)
+
 
 data class Payments(
-    //val id: Int,
+    val id: Int,
     val account: Int,
-    val referencia: Int,
+    val referencia: String,
     val codigo: Int,
-    val valor: Double,
+    val valor: Int,
     val data_pagamento: String)
+
+data class Pay(
+    val account: Int,
+    val referencia: String,
+    val codigo: Int,
+    val valor: Int,
+    val data_pagamento: String)
+
 
 
 

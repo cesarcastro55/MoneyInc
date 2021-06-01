@@ -41,9 +41,6 @@
             android:id="@+id/action_homeFragment_to_creditCardFragment"
             app:destination="@id/creditCardFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_walletFragment"
-            app:destination="@id/walletFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_selectAccountFragment"
             app:destination="@id/selectAccountFragment" />
         <argument
@@ -83,6 +80,9 @@
         <argument
             android:name="token"
             app:argType="string" />
+        <action
+            android:id="@+id/action_homeFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -144,21 +144,6 @@
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/walletFragment"
-        android:name="com.example.moneyinc.WalletFragment"
-        android:label="WalletFragment"
-        tools:layout="@layout/fragment_wallet">
-        <argument
-            android:name="id"
-            app:argType="string" />
-        <action
-            android:id="@+id/action_walletFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_walletFragment_to_paymentFragment"
-            app:destination="@id/paymentFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/employeeMenuFragment"
         android:name="com.example.moneyinc.EmployeeMenuFragment"
         android:label="fragment_employee_menu"
@@ -182,11 +167,14 @@
         android:label="fragment_payment"
         tools:layout="@layout/fragment_payment" >
         <argument
-            android:name="id"
+            android:name="token"
             app:argType="string" />
         <action
-            android:id="@+id/action_paymentFragment_to_walletFragment"
-            app:destination="@id/walletFragment" />
+            android:id="@+id/action_paymentFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_makePaymentFragment"
+            app:destination="@id/makePaymentFragment" />
     </fragment>
     <fragment
         android:id="@+id/accListFragment"
@@ -199,6 +187,9 @@
         <action
             android:id="@+id/action_accListFragment_to_showAccFragment"
             app:destination="@id/showAccFragment" />
+        <action
+            android:id="@+id/action_accListFragment_to_employeeMenuFragment"
+            app:destination="@id/employeeMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/showAccFragment"
@@ -247,6 +238,18 @@
         android:name="com.example.moneyinc.CreatCardFragment"
         android:label="fragment_creat_card"
         tools:layout="@layout/fragment_creat_card" >
+        <argument
+            android:name="token"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/makePaymentFragment"
+        android:name="com.example.moneyinc.MakePaymentFragment"
+        android:label="fragment_make_payment"
+        tools:layout="@layout/fragment_make_payment" >
+        <action
+            android:id="@+id/action_makePaymentFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
         <argument
             android:name="token"
             app:argType="string" />

@@ -30,7 +30,7 @@ object ServiceApi {
         retrofit.create(UserToken::class.java) }
 }
 
-/**Buscar informações sobre a lista das contas */
+/**Buscar lista de informações de contas */
 interface AccountLista{
     @GET("/accounts/")
     fun getLista(@Header("Authorization") token: String, @Query("page") page: String):
@@ -43,7 +43,7 @@ object ServiceApi3{
 }
 
 
-/**Buscar informações sobre a lista dos cartões */
+/**Buscar lista de cartões */
 interface CardsLista{
     @GET("/cards/")
         fun getListaCards(@Header("Authorization") token: String, @Query("page") page: String):
@@ -55,22 +55,10 @@ object ServiceApi4{
         retrofit.create(CardsLista::class.java) }
 }
 
-
-/**Pagamento */
-interface NovoPagamento{
-    @GET("/payments/")
-    fun newPayment(@Header("Authorization") token: String):
-            Call<Payments>
-}
-
-object ServiceApi5{
-    val retrofitService : NovoPagamento by lazy {
-        retrofit.create(NovoPagamento::class.java) }
-}
-/**Buscar informações sobre as contas */
+/**Criar cartões */
 interface CreatCard{
-    @GET("/accounts/")
-    fun sendRequest(@Header("Authorization") token: String, @Query("info") post: Cards):
+    @POST("/cards/")
+    fun sendRequest(@Header("Authorization") token: String, @Body post: Cards):
             Call<Cards>
 }
 
@@ -78,3 +66,31 @@ object ServiceApi2{
     val retrofitService : CreatCard by lazy {
         retrofit.create(CreatCard::class.java) }
 }
+
+
+
+/**Mostrar pagamentos */
+interface ListaPagamentos{
+    @GET("/payments/")
+    fun getPayments(@Header("Authorization") token: String, @Query("page") page: String):
+            Call<ListaP>
+}
+
+object ServiceApi5{
+    val retrofitService : ListaPagamentos by lazy {
+        retrofit.create(ListaPagamentos::class.java) }
+}
+
+/**Efetuar pagamentos */
+interface MakePayment{
+    @GET("/accounts/")
+    fun sendPay(@Header("Authorization") token: String, @Body post: Pay):
+            Call<Pay>
+}
+
+object ServiceApi6{
+    val retrofitService : MakePayment by lazy {
+        retrofit.create(MakePayment::class.java) }
+}
+
+

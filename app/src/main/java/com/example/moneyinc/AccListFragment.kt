@@ -50,6 +50,10 @@ class AccListFragment : Fragment(), EmpAdapater.OnItemClickListener {
             page = pageup.toString()
             getAccountList(token, page)
         }
+        binding.returnbutton.setOnClickListener{
+            val aux: NavDirections = AccListFragmentDirections.actionAccListFragmentToEmployeeMenuFragment(token)
+            findNavController().navigate(aux)
+        }
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = adapter
