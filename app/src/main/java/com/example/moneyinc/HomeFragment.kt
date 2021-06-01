@@ -35,6 +35,7 @@ class HomeFragment : Fragment() {
 
         val aux: HomeFragmentArgs ?= arguments?.let { HomeFragmentArgs.fromBundle(it) }
         val id = aux?.id.toString()
+        val type = aux?.type.toString()
         val titular1 = aux?.titular1.toString()
         val titular2 = aux?.titular2.toString()
         val titular3 = aux?.titular3.toString()
@@ -42,17 +43,20 @@ class HomeFragment : Fragment() {
         val nib = aux?.nib.toString()
         val swift = aux?.swift.toString()
         val active = aux?.active.toString()
-        val aproved = aux?.approved.toString()
+        val approved = aux?.approved.toString()
         val createdOn = aux?.createdOn.toString()
         val saldo = aux?.saldo.toString()
+        val args = aux?.token.toString()
+        val token = "token $args"
 
 
 
         Log.d("nome recebido!!", titular1)
         Log.d("id recebido!!", id)
+        Log.d("token recebido!!", token)
 
         binding.nometext.text = titular1
-        binding.textView10.text = saldo + '€'
+        binding.textsaldo.text = saldo + '€'
 
 
         //Log.e("Token recebido!!", token)
@@ -77,14 +81,14 @@ class HomeFragment : Fragment() {
         }
 
         binding.button8.setOnClickListener {
-            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToCreditCardFragment(id)
+            val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToCreditCardFragment(token)
             findNavController().navigate(aux)
         }
 
-        binding.button9.setOnClickListener {
+        /*binding.button9.setOnClickListener {
             val aux: NavDirections = HomeFragmentDirections.actionHomeFragmentToSettingsFragment(id)
             findNavController().navigate(aux)
-        }
+        }*/
 
         /*
         fun getInfo(token: String){

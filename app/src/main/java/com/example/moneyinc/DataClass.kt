@@ -22,15 +22,17 @@ data class UserInfo(
     val createdOn: String,
     val saldo: Double)
 
-data class Page(
-    val page: Int
-)
-
 data class Lista(
     val count: Int,
     val next: String?,
     val previous: String?,
     val results: List<UserInfo>)
+
+data class ListaC(
+    val count: Int,
+    val next: String?,
+    val previous: String?,
+    val results: List<Cards>)
 
 data class Cards(
     val id: Int,
@@ -40,7 +42,7 @@ data class Cards(
     val subtype: String,
     val cost_per_year: Int,
     val plafond: Int,
-    val nama_on_card: String,
+    val name_on_card: String,
     val number: Int,
     val valid_until: String,
     val cvc: Int

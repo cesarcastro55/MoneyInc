@@ -30,19 +30,6 @@ object ServiceApi {
         retrofit.create(UserToken::class.java) }
 }
 
-
-/**Buscar informações sobre as contas */
-interface AccountInfo{
-    @GET("/accounts/")
-    fun getInformation(@Header("Authorization") token: String):
-            Call<UserInfo>
-}
-
-object ServiceApi2{
-    val retrofitService : AccountInfo by lazy {
-        retrofit.create(AccountInfo::class.java) }
-}
-
 /**Buscar informações sobre a lista das contas */
 interface AccountLista{
     @GET("/accounts/")
@@ -60,7 +47,7 @@ object ServiceApi3{
 interface CardsLista{
     @GET("/cards/")
         fun getListaCards(@Header("Authorization") token: String, @Query("page") page: String):
-                Call<CardsLista>
+                Call<ListaC>
 }
 
 object ServiceApi4{
@@ -79,4 +66,15 @@ interface NovoPagamento{
 object ServiceApi5{
     val retrofitService : NovoPagamento by lazy {
         retrofit.create(NovoPagamento::class.java) }
+}
+/**Buscar informações sobre as contas */
+interface AccountInfo{
+    @GET("/accounts/")
+    fun getInformation(@Header("Authorization") token: String):
+            Call<UserInfo>
+}
+
+object ServiceApi2{
+    val retrofitService : AccountInfo by lazy {
+        retrofit.create(AccountInfo::class.java) }
 }

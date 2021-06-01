@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <TextView
+                android:id="@+id/idtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/typetext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TYPE"
+                app:layout_constraintTop_toBottomOf="@+id/idtext"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/titular1text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TITULAR1"
+                app:layout_constraintTop_toBottomOf="@+id/typetext"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/titular2text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TITULAR2"
+                app:layout_constraintTop_toBottomOf="@+id/titular1text"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/titular3text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TITULAR3"
+                app:layout_constraintTop_toBottomOf="@+id/titular2text"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/ibantext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IBAN"
+                app:layout_constraintTop_toBottomOf="@+id/titular3text"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/nibtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NIB"
+                app:layout_constraintTop_toBottomOf="@+id/ibantext"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/swifttext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NIB"
+                app:layout_constraintTop_toBottomOf="@+id/nibtext"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/activetext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ACTIVE"
+                app:layout_constraintTop_toBottomOf="@+id/swifttext"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/approvedtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="APPROVED"
+                app:layout_constraintTop_toBottomOf="@+id/activetext"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/createdOn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CREATEDON"
+                app:layout_constraintTop_toBottomOf="@+id/approvedtext"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:id="@+id/saldotext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SALDO"
+                app:layout_constraintTop_toBottomOf="@+id/createdOn"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>

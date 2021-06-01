@@ -17,7 +17,7 @@
 
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/BVtext"
                 android:layout_width="140dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
@@ -30,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView18"
+                android:id="@+id/textname"
                 android:layout_width="230dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="40dp"
@@ -40,8 +40,77 @@
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView17"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/BVtext"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/visualizaracc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="176dp"
+                android:text="ver contas "
+                app:layout_constraintBottom_toTopOf="@+id/activatebutton"
+                app:layout_constraintHorizontal_bias="0.133"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/activatebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ativar cartões"
+                app:layout_constraintBottom_toTopOf="@+id/deactivatebutton"
+                app:layout_constraintHorizontal_bias="0.145"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/visualizaracc" />
+
+            <Button
+                android:id="@+id/logoutbutton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="664dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_logout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/deactivatebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desativar cartões"
+                app:layout_constraintBottom_toTopOf="@+id/activate_acc_button"
+                app:layout_constraintHorizontal_bias="0.16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activatebutton" />
+
+            <Button
+                android:id="@+id/activate_acc_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ativar contas"
+                app:layout_constraintBottom_toTopOf="@+id/deactivate_acc_button"
+                app:layout_constraintHorizontal_bias="0.141"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/deactivatebutton" />
+
+            <Button
+                android:id="@+id/deactivate_acc_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="315dp"
+                android:text="Desativar contas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.156"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activate_acc_button" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>

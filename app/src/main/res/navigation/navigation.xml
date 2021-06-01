@@ -80,15 +80,15 @@
         <argument
             android:name="saldo"
             app:argType="string" />
+        <argument
+            android:name="token"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.moneyinc.SettingsFragment"
         android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings">
-        <argument
-            android:name="id"
-            app:argType="string" />
         <action
             android:id="@+id/action_settingsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -124,24 +124,24 @@
         android:name="com.example.moneyinc.SelectAccountFragment"
         android:label="SelectAccountFragment"
         tools:layout="@layout/fragment_select_account">
-        <action
-            android:id="@+id/action_selectAccountFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
         <argument
             android:name="token"
             app:argType="string" />
+        <action
+            android:id="@+id/action_selectAccountFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/creditCardFragment"
         android:name="com.example.moneyinc.CreditCardFragment"
         android:label="CreditCardFragment"
         tools:layout="@layout/fragment_credit_card">
-        <argument
-            android:name="id"
-            app:argType="string" />
         <action
             android:id="@+id/action_creditCardFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="token"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/walletFragment"
@@ -166,6 +166,12 @@
         <argument
             android:name="token"
             app:argType="string" />
+        <action
+            android:id="@+id/action_employeeMenuFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_employeeMenuFragment_to_accListFragment"
+            app:destination="@id/accListFragment" />
     </fragment>
     <fragment
         android:id="@+id/paymentFragment"
@@ -178,5 +184,59 @@
         <action
             android:id="@+id/action_paymentFragment_to_walletFragment"
             app:destination="@id/walletFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accListFragment"
+        android:name="com.example.moneyinc.AccListFragment"
+        android:label="fragment_acc_list"
+        tools:layout="@layout/fragment_acc_list" >
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_accListFragment_to_showAccFragment"
+            app:destination="@id/showAccFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showAccFragment"
+        android:name="com.example.moneyinc.ShowAccFragment"
+        android:label="fragment_show_acc"
+        tools:layout="@layout/fragment_show_acc" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="titular1"
+            app:argType="string" />
+        <argument
+            android:name="titular2"
+            app:argType="string" />
+        <argument
+            android:name="titular3"
+            app:argType="string" />
+        <argument
+            android:name="iban"
+            app:argType="string" />
+        <argument
+            android:name="nib"
+            app:argType="string" />
+        <argument
+            android:name="swift"
+            app:argType="string" />
+        <argument
+            android:name="active"
+            app:argType="boolean" />
+        <argument
+            android:name="approved"
+            app:argType="boolean" />
+        <argument
+            android:name="createdOn"
+            app:argType="string" />
+        <argument
+            android:name="saldo"
+            app:argType="string" />
     </fragment>
 </navigation>

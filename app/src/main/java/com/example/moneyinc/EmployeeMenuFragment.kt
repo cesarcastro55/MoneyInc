@@ -9,32 +9,46 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.moneyinc.databinding.FragmentEmployeeMenuBinding
 import com.example.moneyinc.databinding.FragmentPaymentBinding
 
-class EmployeeMenuFragment : Fragment() {
+class EmployeeMenuFragment : Fragment(), EmpAdapater.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
+    private val adapter = EmpAdapater(listOf(), this)
+    var lista = mutableListOf<UserInfo>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentPaymentBinding>(
+        val binding = DataBindingUtil.inflate<FragmentEmployeeMenuBinding>(
             inflater,
             R.layout.fragment_employee_menu,
             container,
             false
         )
 
-        val aux: PaymentFragmentArgs ?= arguments?.let { PaymentFragmentArgs.fromBundle(it) }
-        val id = aux?.id.toString()
+        val aux: EmployeeMenuFragmentArgs ?= arguments?.let { EmployeeMenuFragmentArgs.fromBundle(it) }
+        val args = aux?.token.toString()
+        val token = "token $args"
 
+        binding.logoutbutton.setOnClickListener {
+            val aux: NavDirections = EmployeeMenuFragmentDirections.actionEmployeeMenuFragmentToLoginFragment()
+            findNavController().navigate(aux)
+        }
 
-
-
+        binding.visualizaracc.setOnClickListener {
+            val aux: NavDirections = EmployeeMenuFragmentDirections.actionEmployeeMenuFragmentToAccListFragment(token)
+            findNavController().navigate(aux)
+        }
 
         return binding.root
+    }
+
+    override fun onItemClick(position: Int) {
     }
 }

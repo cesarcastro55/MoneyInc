@@ -1,31 +1,24 @@
 package com.example.moneyinc
 
-
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.moneyinc.databinding.FragmentSelectAccountBinding
-import kotlinx.android.synthetic.main.fragment_select_account.*
+import com.example.moneyinc.databinding.FragmentAccListBinding
+import com.example.moneyinc.databinding.FragmentSettingsBinding
 import retrofit2.Call
 import retrofit2.Response
 
+class AccListFragment : Fragment(), EmpAdapater.OnItemClickListener {
 
-class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    var args = ""
-    private val adapter = CustomAdapter(listOf(), this)
+    private val adapter = EmpAdapater(listOf(), this)
     var lista = mutableListOf<UserInfo>()
 
     override fun onCreateView(
@@ -33,26 +26,17 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = DataBindingUtil.inflate<FragmentSelectAccountBinding>(
+        val binding = DataBindingUtil.inflate<FragmentAccListBinding>(
             inflater,
-            R.layout.fragment_select_account,
+            R.layout.fragment_acc_list,
             container,
             false
         )
-
-        val aux: SelectAccountFragmentArgs ?= arguments?.let { SelectAccountFragmentArgs.fromBundle(it) }
-        args = aux?.token.toString()
-        val token = "token $args"
-        Log.e("Token recebido!!", token)
-
+        val aux: AccListFragmentArgs ?= arguments?.let { AccListFragmentArgs.fromBundle(it) }
+        val token = aux?.token.toString()
+        Log.d("Erro emp", token)
         var page = "1"
-
-        getAccountList(token, page)
-
-        /*binding.button2.setOnClickListener {
-            val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(token)
-            findNavController().navigate(aux)
-        }*/
+        /*getAccountList(token, page)
 
 
         binding.pageup.setOnClickListener{
@@ -62,18 +46,22 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
         }
 
         binding.pagedown.setOnClickListener{
-            var pagedown = page.toInt() - 1
-            page = pagedown.toString()
+            var pageup = page.toInt() - 1
+            page = pageup.toString()
             getAccountList(token, page)
         }
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView.adapter = adapter*/
 
         return binding.root
     }
 
-    private fun getAccountList(token: String, page: String) {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    /*private fun getAccountList(token: String, page: String) {
 
         ServiceApi3.retrofitService.getLista(token,page).enqueue(
             object : retrofit2.Callback<Lista> {
@@ -86,7 +74,6 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
                     }
                     //passar lista ao adapter
                     adapter.reloadItems(lista)
-                    // if(response.body()?.results!!.equals("404")) page = 1
                 }
 
                 override fun onFailure(call: Call<Lista>, t: Throwable) {
@@ -96,17 +83,14 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
             }
         )
 
-    }
+    }*/
+
     override fun onItemClick(position: Int) {
         Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
-        val aux: NavDirections = SelectAccountFragmentDirections.actionSelectAccountFragmentToHomeFragment(lista[position].id.toString(),
+        val aux: NavDirections = AccListFragmentDirections.actionAccListFragmentToShowAccFragment(lista[position].id.toString(),
             lista[position].type, lista[position].titular1, lista[position].titular2, lista[position].titular3,
             lista[position].iban, lista[position].nib, lista[position].swift, lista[position].active, lista[position].approved,
-            lista[position].createdOn, lista[position].saldo.toString(), args)
+            lista[position].createdOn, lista[position].saldo.toString())
         findNavController().navigate(aux)
-
     }
-
-
-
 }
