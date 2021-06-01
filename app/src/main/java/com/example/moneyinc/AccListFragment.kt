@@ -36,7 +36,7 @@ class AccListFragment : Fragment(), EmpAdapater.OnItemClickListener {
         val token = aux?.token.toString()
         Log.d("Erro emp", token)
         var page = "1"
-        /*getAccountList(token, page)
+        getAccountList(token, page)
 
 
         binding.pageup.setOnClickListener{
@@ -52,7 +52,7 @@ class AccListFragment : Fragment(), EmpAdapater.OnItemClickListener {
         }
 
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
-        binding.recyclerView.adapter = adapter*/
+        binding.recyclerView.adapter = adapter
 
         return binding.root
     }
@@ -61,7 +61,7 @@ class AccListFragment : Fragment(), EmpAdapater.OnItemClickListener {
         super.onCreate(savedInstanceState)
     }
 
-    /*private fun getAccountList(token: String, page: String) {
+    private fun getAccountList(token: String, page: String) {
 
         ServiceApi3.retrofitService.getLista(token,page).enqueue(
             object : retrofit2.Callback<Lista> {
@@ -83,7 +83,7 @@ class AccListFragment : Fragment(), EmpAdapater.OnItemClickListener {
             }
         )
 
-    }*/
+    }
 
     override fun onItemClick(position: Int) {
         Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()

@@ -15,12 +15,12 @@ import retrofit2.Call
 import retrofit2.Response
 
 
-class CreditCardFragment : Fragment(), EmpAdapater.OnItemClickListener {
+class CreditCardFragment : Fragment(), CardShowAdapater.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-    private val adapter = EmpAdapater(listOf(), this)
+    private val adapter = CardShowAdapater(listOf(), this)
     var lista = mutableListOf<Cards>()
 
 
@@ -84,6 +84,5 @@ class CreditCardFragment : Fragment(), EmpAdapater.OnItemClickListener {
     }
 
     override fun onItemClick(position: Int) {
-        TODO("Not yet implemented")
     }
 }

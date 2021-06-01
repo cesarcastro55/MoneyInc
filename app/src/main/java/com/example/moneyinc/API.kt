@@ -68,13 +68,13 @@ object ServiceApi5{
         retrofit.create(NovoPagamento::class.java) }
 }
 /**Buscar informações sobre as contas */
-interface AccountInfo{
+interface CreatCard{
     @GET("/accounts/")
-    fun getInformation(@Header("Authorization") token: String):
-            Call<UserInfo>
+    fun sendRequest(@Header("Authorization") token: String, @Query("info") post: Cards):
+            Call<Cards>
 }
 
 object ServiceApi2{
-    val retrofitService : AccountInfo by lazy {
-        retrofit.create(AccountInfo::class.java) }
+    val retrofitService : CreatCard by lazy {
+        retrofit.create(CreatCard::class.java) }
 }

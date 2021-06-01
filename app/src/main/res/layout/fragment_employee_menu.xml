@@ -46,70 +46,81 @@
 
             <Button
                 android:id="@+id/visualizaracc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="176dp"
-                android:text="ver contas "
-                app:layout_constraintBottom_toTopOf="@+id/activatebutton"
-                app:layout_constraintHorizontal_bias="0.133"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_width="292dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginEnd="51dp"
+                android:text="Ver Contas "
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:backgroundTint="#7f0000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/BVtext" />
 
             <Button
-                android:id="@+id/activatebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ativar cartões"
-                app:layout_constraintBottom_toTopOf="@+id/deactivatebutton"
-                app:layout_constraintHorizontal_bias="0.145"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/visualizaracc" />
+                android:id="@+id/createbutton"
+                android:layout_width="146dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="50dp"
+                android:text="Criar Cartões"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="#7f0000"
+                app:layout_constraintEnd_toStartOf="@+id/deactivatebutton"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/activate_acc_button" />
 
             <Button
                 android:id="@+id/logoutbutton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="664dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="50dp"
                 android:background="@drawable/ic_logout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <Button
                 android:id="@+id/deactivatebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Desativar cartões"
-                app:layout_constraintBottom_toTopOf="@+id/activate_acc_button"
-                app:layout_constraintHorizontal_bias="0.16"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/activatebutton" />
+                android:layout_width="146dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="50dp"
+                android:text="Desativar Cartões"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="#7f0000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/activatebutton"
+                app:layout_constraintTop_toBottomOf="@+id/deactivate_acc_button" />
 
             <Button
                 android:id="@+id/activate_acc_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ativar contas"
-                app:layout_constraintBottom_toTopOf="@+id/deactivate_acc_button"
-                app:layout_constraintHorizontal_bias="0.141"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/deactivatebutton" />
+                android:layout_width="146dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="50dp"
+                android:text="Ativar Contas"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="#7f0000"
+                app:layout_constraintEnd_toStartOf="@+id/deactivate_acc_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/visualizaracc" />
 
             <Button
                 android:id="@+id/deactivate_acc_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="315dp"
-                android:text="Desativar contas"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.156"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/activate_acc_button" />
+                android:layout_width="146dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="50dp"
+                android:text="Desativar Contas"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:backgroundTint="#7f0000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/activate_acc_button"
+                app:layout_constraintTop_toBottomOf="@+id/visualizaracc" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -20,9 +20,6 @@ import retrofit2.Response
 
 
 class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     var args = ""
     private val adapter = CustomAdapter(listOf(), this)
@@ -71,6 +68,10 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
         binding.recyclerView.adapter = adapter
 
         return binding.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
     private fun getAccountList(token: String, page: String) {

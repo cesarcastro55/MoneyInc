@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".CreditCardFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <TextView
+                android:id="@+id/creatcardtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:text="Criar Cartão"
+                android:textSize="40dp"
+                app:layout_constraintHorizontal_bias="0.081"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/idtext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="124dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="ID"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/accounttext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Account"
+                app:layout_constraintHorizontal_bias="0.503"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/idtext"
+                tools:layout_editor_absoluteY="176dp" />
+
+            <EditText
+                android:id="@+id/usertext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="User"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/accounttext"/>
+
+            <EditText
+                android:id="@+id/typetext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Type"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/usertext"/>
+
+            <EditText
+                android:id="@+id/subtypetext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Subtype"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/typetext"/>
+
+            <EditText
+                android:id="@+id/costperyeartext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Cost per year"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/subtypetext"/>
+
+            <EditText
+                android:id="@+id/plafondtext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Plafond"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/costperyeartext"/>
+
+            <EditText
+                android:id="@+id/nameoncardtext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Name on card"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/plafondtext"/>
+
+            <EditText
+                android:id="@+id/numbertext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Number"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/nameoncardtext"/>
+
+            <EditText
+                android:id="@+id/validuntiltext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Valid until"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/numbertext"/>
+
+            <EditText
+                android:id="@+id/cvctext"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="80dp"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="CVC"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/validuntiltext"/>
+
+            <Button
+                android:id="@+id/sendrequest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enviar pedido"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.863"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvctext"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

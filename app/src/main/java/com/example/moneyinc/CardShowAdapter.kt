@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class EmpAdapater(
-    private var dataSet: List<UserInfo>,
+class CardShowAdapater(
+    private var dataSet: List<Cards>,
     private val listener: OnItemClickListener
 ) :
-    RecyclerView.Adapter<EmpAdapater.ViewHolder2>() {
+    RecyclerView.Adapter<CardShowAdapater.ViewHolder2>() {
 
-    fun reloadItems(lista: List<UserInfo>){
+    fun reloadItems(lista: List<Cards>){
         dataSet = lista
         notifyDataSetChanged()
     }
@@ -24,10 +24,10 @@ class EmpAdapater(
         val textid: TextView = view.findViewById(R.id.textid)
         val textsaldo: TextView = view.findViewById(R.id.textsaldo)
 
-        fun bind(userInfo: UserInfo) {
-            texttitular.text = userInfo.titular1
-            textid.text = userInfo.id.toString()
-            textsaldo.text = userInfo.saldo.toString()
+        fun bind(cards: Cards) {
+            texttitular.text = cards.name_on_card
+            textid.text = cards.type
+            textsaldo.text = cards.number
         }
 
         init {
@@ -53,7 +53,7 @@ class EmpAdapater(
 
 
     override fun onBindViewHolder(viewHolder: ViewHolder2, position: Int) {
-        val currentItem: UserInfo = dataSet[position]
+        val currentItem: Cards = dataSet[position]
         viewHolder.bind(currentItem)
     }
 

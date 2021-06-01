@@ -13,12 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moneyinc.databinding.FragmentEmployeeMenuBinding
 import com.example.moneyinc.databinding.FragmentPaymentBinding
 
-class EmployeeMenuFragment : Fragment(), EmpAdapater.OnItemClickListener {
+class EmployeeMenuFragment : Fragment(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
-    private val adapter = EmpAdapater(listOf(), this)
-    var lista = mutableListOf<UserInfo>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,9 +44,11 @@ class EmployeeMenuFragment : Fragment(), EmpAdapater.OnItemClickListener {
             findNavController().navigate(aux)
         }
 
-        return binding.root
-    }
+        binding.createbutton.setOnClickListener {
+            val aux: NavDirections = EmployeeMenuFragmentDirections.actionEmployeeMenuFragmentToCreatCardFragment(token)
+            findNavController().navigate(aux)
+        }
 
-    override fun onItemClick(position: Int) {
+        return binding.root
     }
 }
