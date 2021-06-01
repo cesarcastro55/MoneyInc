@@ -43,9 +43,9 @@ data class Cards(
     val cost_per_year: Int,
     val plafond: Int,
     val name_on_card: String,
-    val number: Int,
+    val number: String,
     val valid_until: String,
-    val cvc: Int
+    val cvc: String
 )
 
 data class Payments(
