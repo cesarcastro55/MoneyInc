@@ -23,7 +23,7 @@ class CreatCardFragment : Fragment() {
 
     }
 
-    var post = Cards("","","","", "", "","","","","")
+    var post = Cards(1,1,"","", 1, 1,"","","","")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -65,8 +65,8 @@ class CreatCardFragment : Fragment() {
             var validuntil: String = binding.validuntiltext.text.toString()
             var cvc: String = binding.cvctext.text.toString()
 
-            var temp = Cards(account, user, type, subtype, costperyear,
-                plafond, nameoncard, number, validuntil, cvc)
+            var temp = Cards(account.toInt(), user.toInt(), type, subtype, costperyear.toInt(),
+                plafond.toInt(), nameoncard, number, validuntil, cvc)
 
             requestCard(token, temp)
         }

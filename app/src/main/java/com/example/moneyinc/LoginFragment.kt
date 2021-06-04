@@ -64,12 +64,12 @@ class LoginFragment : Fragment() {
                 override fun onResponse(call: Call<Token>, response: Response<Token>) {
                     var PostResponse: Token? = response.body()
                     if(PostResponse != null){
-                        val tempToken = response.body()!!.token
+                        val token = response.body()!!.token
                         if(username == "cliente") {
-                            val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToSelectAccountFragment(tempToken)
+                            val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToSelectAccountFragment(token)
                             findNavController().navigate(aux)}
                         else{
-                            val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToEmployeeMenuFragment(tempToken)
+                            val aux: NavDirections = LoginFragmentDirections.actionLoginFragmentToEmployeeMenuFragment(token)
                             findNavController().navigate(aux)}
                     }else{
                         Log.e("Erro!!", "Sem dados1!!")

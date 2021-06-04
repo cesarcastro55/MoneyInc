@@ -24,7 +24,7 @@
                 android:text="Definições"
                 android:textColor="@color/black"
                 android:textSize="25dp"
-                app:layout_constraintStart_toEndOf="@+id/button10"
+                app:layout_constraintStart_toEndOf="@+id/returnbutton"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -62,7 +62,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/returnbutton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"

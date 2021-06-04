@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import com.example.moneyinc.databinding.FragmentCreditCardBinding
 import com.example.moneyinc.databinding.FragmentMakePaymentBinding
 import retrofit2.Call
@@ -40,6 +42,11 @@ class MakePaymentFragment : Fragment() {
         binding.valortext.setText("5")
         binding.datatext.setText("01-06-2021")
 
+        binding.returnbutton.setOnClickListener{
+            val aux: NavDirections = MakePaymentFragmentDirections.actionMakePaymentFragmentToPaymentFragment(token)
+            findNavController().navigate(aux)
+        }
+
         binding.confirmButton.setOnClickListener {
             var account: String = binding.contatext.text.toString()
             var referencia: String = binding.referenciatext.text.toString()
@@ -63,7 +70,7 @@ class MakePaymentFragment : Fragment() {
                 }
 
                 override fun onResponse(call: Call<Pay>, response: Response<Pay>) {
-                    Log.d("chegou aqui", "VIVA")
+                    Log.d("chegou aqui pagamentos", response.toString())
                 }
 
             }

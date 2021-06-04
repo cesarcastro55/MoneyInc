@@ -83,7 +83,7 @@ object ServiceApi5{
 
 /**Efetuar pagamentos */
 interface MakePayment{
-    @GET("/accounts/")
+    @POST("/payments/")
     fun sendPay(@Header("Authorization") token: String, @Body post: Pay):
             Call<Pay>
 }

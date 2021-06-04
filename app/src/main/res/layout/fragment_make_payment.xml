@@ -98,11 +98,11 @@
                 android:textSize="25dp"
                 android:gravity="center"
                 android:textColor="@color/black"
-                app:layout_constraintStart_toEndOf="@+id/button14"
+                app:layout_constraintStart_toEndOf="@+id/returnbutton"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/returnbutton"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"

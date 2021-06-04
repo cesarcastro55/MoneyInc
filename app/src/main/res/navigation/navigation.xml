@@ -175,6 +175,9 @@
         <action
             android:id="@+id/action_paymentFragment_to_makePaymentFragment"
             app:destination="@id/makePaymentFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_showPayInfoFragment"
+            app:destination="@id/showPayInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/accListFragment"
@@ -249,6 +252,36 @@
         tools:layout="@layout/fragment_make_payment" >
         <action
             android:id="@+id/action_makePaymentFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/showPayInfoFragment"
+        android:name="com.example.moneyinc.ShowPayInfoFragment"
+        android:label="fragment_show_pay_info"
+        tools:layout="@layout/fragment_show_pay_info" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="account"
+            app:argType="string" />
+        <argument
+            android:name="referencia"
+            app:argType="string" />
+        <argument
+            android:name="codigo"
+            app:argType="string" />
+        <argument
+            android:name="valor"
+            app:argType="string" />
+        <argument
+            android:name="data_pagamento"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_showPayInfoFragment_to_paymentFragment"
             app:destination="@id/paymentFragment" />
         <argument
             android:name="token"

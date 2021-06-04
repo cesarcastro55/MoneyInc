@@ -86,7 +86,6 @@ class SelectAccountFragment : Fragment(), CustomAdapter.OnItemClickListener {
                     }
                     //passar lista ao adapter
                     adapter.reloadItems(lista)
-                   // if(response.body()?.results!!.equals("404")) page = "1"
                 }
 
                 override fun onFailure(call: Call<Lista>, t: Throwable) {
